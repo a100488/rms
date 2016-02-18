@@ -22,6 +22,7 @@ public class RoleServiceTest {
 	}
 */
 	public static void main(String[] args) {
+		System.out.println("sd");
 	/*	ApplicationContext ac=new ClassPathXmlApplicationContext("/config/spring.xml");
 		RoleService rc=(RoleService) ac.getBean(RoleService.class);
 		RoleDomain roleDomain = new RoleDomain();
