@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anwei.rms.repository.PermissionExMapper" >
+  <resultMap id="BaseExResultMap" type="com.anwei.rms.pojo.domain.PermissionDomain" extends="com.anwei.rms.repository.PermissionMapper.BaseResultMap" >
+    
+  </resultMap>
+
+  <select id="selectAll" resultMap="BaseExResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="com.anwei.rms.repository.PermissionMapper.Base_Column_List" />
+    from t_permission
+    where 1=1
+    <if test="permission!=null">
+    AND `PERMISSION`= #{permission,jdbcType=VARCHAR}
+    </if>
+      <if test="parentUuid != null" >
+        AND PARENT_UUID = #{parentUuid,jdbcType=CHAR}
+      </if>
+    order by ORGA_RELA_INDEX asc 
+  </select>
+  <select id="selectCode" resultMap="BaseExResultMap" parameterType="java.lang.String" >
+	SELECT
+	 UUID, CONCAT(
+	REPEAT
+	(
+	'&#12288;&#12288;&#9492;',
+	CHAR_LENGTH(ORGA_RELA_INDEX) DIV 21 - 1
+	),
+	PERMISSION_NAME
+	) AS PERMISSION_NAME
+	, PARENT_UUID, ORGA_RELA_INDEX, PERMISSION, INSER_TTIME
+	FROM
+	t_permission
+	ORDER BY
+	ORGA_RELA_INDEX
+  </select>
+</mapper>
