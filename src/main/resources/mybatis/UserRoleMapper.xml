@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anwei.rms.repository.UserRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.anwei.rms.pojo.entity.UserRole" >
+    <id column="UUID" property="uuid" jdbcType="CHAR" />
+    <result column="USER_UUID" property="userUuid" jdbcType="CHAR" />
+    <result column="ROLE_UUID" property="roleUuid" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    UUID, USER_UUID, ROLE_UUID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_role
+    where UUID = #{uuid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_user_role
+    where UUID = #{uuid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.anwei.rms.pojo.entity.UserRole" >
+    insert into t_user_role (UUID, USER_UUID, ROLE_UUID
+      )
+    values (#{uuid,jdbcType=CHAR}, #{userUuid,jdbcType=CHAR}, #{roleUuid,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.anwei.rms.pojo.entity.UserRole" >
+    insert into t_user_role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        UUID,
+      </if>
+      <if test="userUuid != null" >
+        USER_UUID,
+      </if>
+      <if test="roleUuid != null" >
+        ROLE_UUID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        #{uuid,jdbcType=CHAR},
+      </if>
+      <if test="userUuid != null" >
+        #{userUuid,jdbcType=CHAR},
+      </if>
+      <if test="roleUuid != null" >
+        #{roleUuid,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.anwei.rms.pojo.entity.UserRole" >
+    update t_user_role
+    <set >
+      <if test="userUuid != null" >
+        USER_UUID = #{userUuid,jdbcType=CHAR},
+      </if>
+      <if test="roleUuid != null" >
+        ROLE_UUID = #{roleUuid,jdbcType=CHAR},
+      </if>
+    </set>
+    where UUID = #{uuid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.anwei.rms.pojo.entity.UserRole" >
+    update t_user_role
+    set USER_UUID = #{userUuid,jdbcType=CHAR},
+      ROLE_UUID = #{roleUuid,jdbcType=CHAR}
+    where UUID = #{uuid,jdbcType=CHAR}
+  </update>
+</mapper>

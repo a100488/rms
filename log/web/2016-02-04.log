@@ -1,0 +1,56 @@
+2016-02-04 14:17:42,605 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2016-02-04 14:17:42,787 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.anwei.rms.common.auth.CustomRealm.authorizationCache' does not yet exist.  Creating now.
+2016-02-04 14:17:42,849 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.anwei.rms.common.auth.CustomRealm.authorizationCache]
+2016-02-04 14:17:43,247 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==>  Preparing: SELECT r.UUID AS UUID, r.ROLE_NAME AS ROLE_NAME, r.MEMO AS MEMO, r.DELETE_FLAG AS DELETE_FLAG, t_permission.UUID AS PERMISSION_UUID, t_permission.PERMISSION_NAME AS PERMISSION_NAME, t_permission.PARENT_UUID AS PARENT_UUID, t_permission.ORGA_RELA_INDEX AS ORGA_RELA_INDEX, t_permission.PERMISSION AS PERMISSION, t_permission.INSER_TTIME AS INSER_TTIME FROM t_role AS r LEFT JOIN t_role_permission AS rp ON r.UUID = rp.ROLE_UUID LEFT JOIN t_permission ON t_permission.UUID = rp.PERMISSION_UUID where 1=1 
+2016-02-04 14:17:43,273 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==> Parameters: 
+2016-02-04 14:19:27,892 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2016-02-04 14:19:28,059 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.anwei.rms.common.auth.CustomRealm.authorizationCache' does not yet exist.  Creating now.
+2016-02-04 14:19:28,120 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.anwei.rms.common.auth.CustomRealm.authorizationCache]
+2016-02-04 14:19:28,454 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==>  Preparing: SELECT r.UUID AS UUID, r.ROLE_NAME AS ROLE_NAME, r.MEMO AS MEMO, r.DELETE_FLAG AS DELETE_FLAG, t_permission.UUID AS PERMISSION_UUID, t_permission.PERMISSION_NAME AS PERMISSION_NAME, t_permission.PARENT_UUID AS PARENT_UUID, t_permission.ORGA_RELA_INDEX AS ORGA_RELA_INDEX, t_permission.PERMISSION AS PERMISSION, t_permission.INSER_TTIME AS INSER_TTIME FROM t_role AS r LEFT JOIN t_role_permission AS rp ON r.UUID = rp.ROLE_UUID LEFT JOIN t_permission ON t_permission.UUID = rp.PERMISSION_UUID where 1=1 
+2016-02-04 14:19:28,473 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==> Parameters: 
+2016-02-04 14:21:11,788 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2016-02-04 14:21:11,957 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.anwei.rms.common.auth.CustomRealm.authorizationCache' does not yet exist.  Creating now.
+2016-02-04 14:21:12,016 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.anwei.rms.common.auth.CustomRealm.authorizationCache]
+2016-02-04 14:21:12,417 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==>  Preparing: SELECT r.UUID AS UUID, r.ROLE_NAME AS ROLE_NAME, r.MEMO AS MEMO, r.DELETE_FLAG AS DELETE_FLAG, t_permission.UUID AS PERMISSION_UUID, t_permission.PERMISSION_NAME AS PERMISSION_NAME, t_permission.PARENT_UUID AS PARENT_UUID, t_permission.ORGA_RELA_INDEX AS ORGA_RELA_INDEX, t_permission.PERMISSION AS PERMISSION, t_permission.INSER_TTIME AS INSER_TTIME FROM t_role AS r LEFT JOIN t_role_permission AS rp ON r.UUID = rp.ROLE_UUID LEFT JOIN t_permission ON t_permission.UUID = rp.PERMISSION_UUID where 1=1 
+2016-02-04 14:21:12,435 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==> Parameters: 
+2016-02-04 14:24:00,305 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2016-02-04 14:24:00,440 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.anwei.rms.common.auth.CustomRealm.authorizationCache' does not yet exist.  Creating now.
+2016-02-04 14:24:00,473 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.anwei.rms.common.auth.CustomRealm.authorizationCache]
+2016-02-04 14:24:24,490 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2016-02-04 14:24:24,639 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.anwei.rms.common.auth.CustomRealm.authorizationCache' does not yet exist.  Creating now.
+2016-02-04 14:24:24,675 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.anwei.rms.common.auth.CustomRealm.authorizationCache]
+2016-02-04 14:24:25,008 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==>  Preparing: SELECT r.UUID AS UUID, r.ROLE_NAME AS ROLE_NAME, r.MEMO AS MEMO, r.DELETE_FLAG AS DELETE_FLAG, t_permission.UUID AS PERMISSION_UUID, t_permission.PERMISSION_NAME AS PERMISSION_NAME, t_permission.PARENT_UUID AS PARENT_UUID, t_permission.ORGA_RELA_INDEX AS ORGA_RELA_INDEX, t_permission.PERMISSION AS PERMISSION, t_permission.INSER_TTIME AS INSER_TTIME FROM t_role AS r LEFT JOIN t_role_permission AS rp ON r.UUID = rp.ROLE_UUID LEFT JOIN t_permission ON t_permission.UUID = rp.PERMISSION_UUID where 1=1 
+2016-02-04 14:24:25,029 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==> Parameters: 
+2016-02-04 14:34:11,869 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2016-02-04 14:34:12,032 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.anwei.rms.common.auth.CustomRealm.authorizationCache' does not yet exist.  Creating now.
+2016-02-04 14:34:12,064 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.anwei.rms.common.auth.CustomRealm.authorizationCache]
+2016-02-04 14:34:12,399 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==>  Preparing: select UUID, ROLE_NAME, DELETE_FLAG , MEMO from t_role where 1=1 
+2016-02-04 14:34:12,420 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==> Parameters: 
+2016-02-04 14:34:12,436 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectPermissionList - ====>  Preparing: SELECT p.* FROM t_role_permission rp LEFT JOIN t_permission p ON p.UUID = rp.PERMISSION_UUID WHERE rp.ROLE_UUID= ? 
+2016-02-04 14:34:12,437 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectPermissionList - ====> Parameters: 3kohaD3NFSTRd8aBrTarvd(String)
+2016-02-04 14:34:12,439 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectPermissionList - <====      Total: 1
+2016-02-04 14:34:12,442 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - <==      Total: 1
+2016-02-04 14:34:58,458 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2016-02-04 14:34:58,604 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.anwei.rms.common.auth.CustomRealm.authorizationCache' does not yet exist.  Creating now.
+2016-02-04 14:34:58,638 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.anwei.rms.common.auth.CustomRealm.authorizationCache]
+2016-02-04 14:34:58,977 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==>  Preparing: select UUID, ROLE_NAME, DELETE_FLAG , MEMO from t_role where 1=1 
+2016-02-04 14:34:58,996 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==> Parameters: 
+2016-02-04 14:34:59,008 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectPermissionList - ====>  Preparing: SELECT p.* FROM t_role_permission rp LEFT JOIN t_permission p ON p.UUID = rp.PERMISSION_UUID WHERE rp.ROLE_UUID= ? 
+2016-02-04 14:34:59,008 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectPermissionList - ====> Parameters: 3kohaD3NFSTRd8aBrTarvd(String)
+2016-02-04 14:34:59,009 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectPermissionList - <====      Total: 1
+2016-02-04 14:34:59,011 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - <==      Total: 1
+2016-02-04 17:07:17,858 [main] INFO  org.apache.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+2016-02-04 17:07:18,023 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Cache with name 'com.anwei.rms.common.auth.CustomRealm.authorizationCache' does not yet exist.  Creating now.
+2016-02-04 17:07:18,090 [main] INFO  org.apache.shiro.cache.ehcache.EhCacheManager - Added EhCache named [com.anwei.rms.common.auth.CustomRealm.authorizationCache]
+2016-02-04 17:07:18,426 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==>  Preparing: select UUID, ROLE_NAME, DELETE_FLAG , MEMO from t_role where DELETE_FLAG = '0' 
+2016-02-04 17:07:18,446 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - ==> Parameters: 
+2016-02-04 17:07:18,462 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - ====>  Preparing: SELECT * FROM t_role_permission where ROLE_UUID= ? 
+2016-02-04 17:07:18,462 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - ====> Parameters: Ee23JSBMyK6VQww8nxYkoQ(String)
+2016-02-04 17:07:18,463 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - <====      Total: 1
+2016-02-04 17:07:18,465 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - ====>  Preparing: SELECT * FROM t_role_permission where ROLE_UUID= ? 
+2016-02-04 17:07:18,466 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - ====> Parameters: iYJuApHuHFwg71GNh6KDH(String)
+2016-02-04 17:07:18,467 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - <====      Total: 3
+2016-02-04 17:07:18,468 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - ====>  Preparing: SELECT * FROM t_role_permission where ROLE_UUID= ? 
+2016-02-04 17:07:18,468 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - ====> Parameters: NstCrnT9psbLZjp1uEPk6k(String)
+2016-02-04 17:07:18,469 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectRolePermissionList - <====      Total: 3
+2016-02-04 17:07:18,469 [main] DEBUG com.anwei.rms.repository.RoleExMapper.selectByPrimaryKey - <==      Total: 3

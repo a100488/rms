@@ -1,0 +1,182 @@
+/** font size */
+.f-s-8 {
+    font-size: 8px !important
+}
+
+.f-s-9 {
+    font-size: 9px !important
+}
+
+.f-s-10 {
+    font-size: 10px !important
+}
+
+.f-s-11 {
+    font-size: 11px !important
+}
+
+.f-s-12 {
+    font-size: 12px !important
+}
+
+.f-s-13 {
+    font-size: 13px !important
+}
+
+.f-s-14 {
+    font-size: 14px !important
+}
+
+.f-s-15 {
+    font-size: 15px !important
+}
+
+.f-s-16 {
+    font-size: 16px !important
+}
+
+.f-s-17 {
+    font-size: 17px !important
+}
+
+.f-s-18 {
+    font-size: 18px !important
+}
+
+.f-s-19 {
+    font-size: 19px !important
+}
+
+.f-s-20 {
+    font-size: 20px !important
+}
+
+/** text align */
+.text-center {
+    text-align: center !important
+}
+
+.text-left {
+    text-align: left !important
+}
+
+.text-right {
+    text-align: right !important
+}
+
+.pull-none {
+    float: none !important
+}
+
+/** font weight */
+.f-w-100 {
+    font-weight: 100 !important
+}
+
+.f-w-200 {
+    font-weight: 200 !important
+}
+
+.f-w-300 {
+    font-weight: 300 !important
+}
+
+.f-w-400 {
+    font-weight: 400 !important
+}
+
+.f-w-500 {
+    font-weight: 500 !important
+}
+
+.f-w-600 {
+    font-weight: 600 !important
+}
+
+.f-w-700 {
+    font-weight: 700 !important
+}
+
+/** border */
+.border-top-1 {
+    border-top: 1px solid #eee !important
+}
+
+.border-right-1 {
+    border-right: 1px solid #eee !important
+}
+
+.border-bottom-1 {
+    border-bottom: 1px solid #eee !important
+}
+
+.border-left-1 {
+    border-left: 1px solid #eee !important
+}
+
+.no-box-shadow {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important
+}
+
+.bubbletop {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: #EF9F00;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 10px;
+    padding: 3px;
+    font: bold 9px Tahoma;
+    visibility:hidden;
+ }
+ 
+ .errortop {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: #ed5565;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 10px;
+    padding: 3px;
+    font: bold 9px Tahoma;
+    visibility:hidden;
+ }
+
+.bubble {
+    position: absolute;
+    top: -8px;
+    left: 90px;
+    background-color: #EF9F00;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 10px;
+    padding: 3px;
+    font: bold 9px Tahoma;
+    visibility:hidden;
+ }
+ 
+ .bubble2 {
+    position: absolute;
+    top: 5px;
+    left: 96px;
+    background-color: #EF9F00;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 10px;
+    padding: 3px;
+    font: bold 9px Tahoma;
+    visibility:hidden;
+ }
+ 
+ul.dropdown-menu.dropdown-messages {
+    width: 260px !important;
+}
+
+a.downloadlink {
+	color:#337ab7;
+    text-decoration:underline;
+    padding-right:30px;
+}

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
+	<!-- 启用 Spring MVC 专用注解（i.e.@RequestMapping, @Controller, etc），并启用 Spring 
+		MVC 提供的默认配置 -->
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="false">
+			<!-- custom converter for HTTP messages -->
+			<bean
+				class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg value="UTF-8" index="0"></constructor-arg>
+			</bean>
+			<bean
+				class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+			<bean
+				class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+			<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+			<bean
+				class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper" ref="objectMapper" />
+			</bean>
+			<bean
+				class="org.springframework.http.converter.feed.AtomFeedHttpMessageConverter" />
+			<bean
+				class="org.springframework.http.converter.feed.RssChannelHttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	<!-- 设置自动扫描的文件夹，应与 <mvc:annotation-driven /> 标签配合使用 -->
+	<context:component-scan base-package="com.anwei.rms.web" />
+	<!-- 定义并映射静态资源，以便传送给客户端的视图（i.e.*.jps, *.html, etc）能够正确引用到这些资源 -->
+	<!-- 映射 src/main/webapp/resources 目录下所有资源以便他们能被 JSP 文件引用 -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<!-- 设置 Welcome Page -->
+	<mvc:view-controller path="/" view-name="index" />
+
+
+	<!-- DispatcherServlet 组件设置 -->
+	<!-- 注册文件上传解析器 -->
+	<!-- 如果未显式注册，DispatcherServlet 将不会拥有该类型组件 -->
+
+	<!-- 注册本地化解析器 -->
+	<!-- 如果未显式注册，Spring MVC 将按照一定规则注册默认实现 -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+	<!-- 注册主体解析器 -->
+	<!-- 如果未显式注册，Spring MVC 将按照一定规则注册默认实现 -->
+
+	<!-- 注册视图控制器映射（可注册多个） -->
+	<!-- 由于定义了 <mvc:annotation-driven /> 标签，RequestMappingHandlerMapping 等将被自动注册到 
+		DispatcherServlet -->
+
+	<!-- 注册视图控制器适配器（可注册多个） -->
+	<!-- 由于定义了 <mvc:annotation-driven /> 标签，RequestMappingHandlerAdapter 等将被自动注册到 
+		DispatcherServlet -->
+
+	<!-- 注册视图控制器异常解析器（可注册多个） -->
+	<!-- <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> 
+		<property name="defaultErrorView" value="exception" /> </bean> -->
+	<!-- 注册视图名翻译器 -->
+	<!-- 如果未显式注册，Spring MVC 将按照一定规则注册默认实现 -->
+	<!-- 注册视图名称解析器（可注册多个） -->
+	<!-- 内容协商管理器，可以根据客户端发送的视图类型，选用相应的视图解析器 -->
+	<bean id="cnManager"
+		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<property name="favorPathExtension" value="true" />
+		<property name="ignoreAcceptHeader" value="true" />
+		<property name="defaultContentType" value="text/html" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="xml" value="application/xml" />
+				<entry key="atom" value="application/atom+xml" />
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+	</bean>
+	<!-- 内容协商视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="contentNegotiationManager" ref="cnManager" />
+		<property name="viewResolvers">
+			<list>
+				<!-- 默认视图类型： JSTL 视图 (JSP with html output) -->
+				<bean
+					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<!-- Example: 一个名为 'users' 的视图将映射到 '/WEB-INF/view/users.jsp' -->
+					<property name="prefix" value="/WEB-INF/jsp/" />
+					<property name="suffix" value=".jsp" />
+				</bean>
+				<!-- 用于 'xml' 和 'atom' 视图 -->
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+			</list>
+		</property>
+	</bean>
+	<!-- Json 转换器映射表（用于反序列化 Json 对象） -->
+	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+	<bean
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject" ref="objectMapper" />
+		<property name="targetMethod" value="configure" />
+		<property name="arguments">
+			<list>
+				<value type="com.fasterxml.jackson.databind.DeserializationFeature">ACCEPT_SINGLE_VALUE_AS_ARRAY</value>
+				<value>true</value>
+			</list>
+		</property>
+	</bean>
+	<!-- Json 视图解析器（用于序列化 Json 对象） -->
+	<!-- 全返回 -->
+	<bean id="/json"
+		class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" >
+		<property name="extractValueFromSingleKeyModel" value="true"/>
+		</bean>
+	<bean id="/json/mobile"
+		class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+	<!-- 多重部分解析器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- ※ 注意：以下配置适用于 Servlet 2.5 Servlet 3.0 的场合，这些信息需要配置于 web.xml 的 DispatcherServlet 
+			节点的 "multipart-config" 部分 因为 Servlet 3.0 不允许这些配置由 MultipartResolver 设定 -->
+		<!-- 请求的编码格式，必须与用户 JSP 的 pageEncoding 属性一致，默认为 ISO-8859-1 -->
+		<!-- <property name="defaultEncoding" value="UTF-8" /> -->
+		<!-- 上传文件的容量上限，单位为字节 -->
+		<!-- <property name="maxUploadSize" value="20971520" /> -->
+		<!-- 上传文件的临时路径 -->
+		<!-- <property name="uploadTempDir" value="upload/temp" /> -->
+	</bean>
+	<!-- 拦截器 -->
+	<mvc:interceptors>
+		<!-- 本地化变更拦截器 -->
+		<!-- 该拦截器一旦被定义，则本地化解析器只能使用 CookieLocaleResolver 和 SessionLocaleResolver -->
+		<bean id="localeChangeInterceptor"
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+	</mvc:interceptors>
+	  <!--
+      - 消息资源，加载自 "messages_xx" 文件
+      - 文件保存在 src/main/resources
+      - 用于在 JSP 页面中获取、输出验证 ( JSR303 ) 信息
+  -->
+  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basename" value="message/messages" />
+    <property name="defaultEncoding" value="UTF-8" />
+  </bean> 
+	<!-- 安全框架（Shiro） -->
+	<bean
+		class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+		depends-on="lifecycleBeanPostProcessor">
+		<property name="proxyTargetClass" value="true" />
+	</bean>
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+</beans>

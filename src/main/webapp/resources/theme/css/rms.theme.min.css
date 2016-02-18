@@ -1,0 +1,331 @@
+/** =============================== 修改 =============================== */
+body {
+    font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
+}
+
+/** sidebar */
+body.mini-navbar .nav-header {
+    background-color: #272930 !important;
+    height:52px;
+}
+
+/** pre */
+pre {
+    background-color: #FFFFFF !important;
+    border: none !important;
+    color: inherit !important;
+    border-radius: 0 !important;
+}
+
+/** breadcrumb */
+.breadcrumb>li a {
+    cursor: text;
+}
+
+/** ibox */
+.ibox-content {
+    padding: 15px 20px 15px 20px;
+}
+
+/** sweetalert */
+.sweet-alert button.cancel {
+    background: #ffffff !important;
+    border: 1px solid #e7eaec !important;
+    color: inherit !important;
+}
+.sweet-alert button.cancel:hover,
+.sweet-alert button.cancel:focus,
+.sweet-alert button.cancel:active {
+    background: #ffffff !important;
+    border: 1px solid #d2d2d2 !important;
+    color: inherit !important;
+}
+.sweet-alert button.cancel:active {
+    box-shadow: inset 0px 2px 5px rgba(0,0,0,0.15) !important;
+}
+
+/** datatables */
+.table-responsive {
+    overflow-x: visible;
+}
+@media screen and (max-width: 767px) {
+    .table-responsive {
+        border: 0;
+    }
+}
+.table-responsive .dataTables_wrapper .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.table-responsive .dataTables_wrapper .row .col-sm-6, .table-responsive .dataTables_wrapper .row .col-md-6, .table-responsive .dataTables_wrapper .row .col-lg-6 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.dataTables_wrapper {
+    padding-bottom: 0;
+}
+.dataTables_wrapper .dataTables_filter label:first-child::after {
+    font-family: "FontAwesome";
+    content: "\f002";
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 2px;
+    top: 6px;
+    padding-left: 2px;
+    color: #999999;
+}
+table.dataTable {
+    table-layout: fixed;
+}
+div.dataTables_paginate {
+    float: left !important;
+}
+div.dataTables_filter input, div.dataTables_filter a {
+    font-size: 13px;
+}
+.dataTables_empty {
+    text-align: center;
+}
+.table>tbody>tr>td {
+    vertical-align: middle !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.table td .checkbox {
+    padding-left: 0;
+}
+.table td .checkbox label {
+    cursor: default;
+}
+.table td .checkbox label::before {
+    margin-left: -14px;
+}
+.table td .checkbox label::after {
+    margin-left: -15px;
+}
+
+/** collapsible controller */
+.control-collapse-link {
+    color: #555;
+}
+.control-collapse-link:hover {
+    color: #555;
+}
+.input-group-addon-left {
+    height: 34px;
+}
+.input-group-addon-left:last-child {
+    border-left: 1px solid #e5e6e7;
+}
+
+/** wizard */
+.bwizard-steps li {
+    min-width: 150px;
+}
+.bwizard-steps .active {
+    background: #1c84c6 !important;
+}
+.bwizard-steps .active:after {
+    border-left-color: #1c84c6 !important;
+}
+.bwizard-steps .done {
+    background: #75bcec !important;
+}
+.bwizard-steps .done:after {
+    border-left-color: #75bcec !important;
+}
+.bwizard-steps.clickable li:hover.done {
+    background: #1c84c6 !important;
+}
+.bwizard-steps.clickable li:hover.done:after {
+    border-left-color: #1c84c6 !important;
+}
+.bwizard-steps a {
+    color: #aaaaaa !important;
+}
+.bwizard-steps .active a {
+    color: #ffffff !important;
+}
+.bwizard-steps .done a {
+    color: #ffffff !important;
+}
+.bwizard-steps.clickable li:hover:not(.active) a {
+    color: #333333 !important;
+}
+.bwizard-steps.clickable li:hover.done a {
+    color: #ffffff !important;
+}
+.bwizard-steps .active .label, .bwizard-steps .done .label {
+    background-color: #309be2 !important;
+    color: #ffffff !important;
+}
+
+/** sweet alert */
+.sweet-alert {
+    font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti !important;
+}
+
+.importClass p {
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+/* Select 2 Choice */
+
+
+
+.select2-dropdown{
+	z-index:1000000!important;
+}
+
+/** bootstrap-timepicker */
+.bootstrap-timepicker .form-control[readonly] {
+    cursor: default;
+    background: #ffffff;
+}
+.bootstrap-timepicker .form-control[readonly]:focus {
+    border-color: #1c84c6 !important;
+}
+.bootstrap-timepicker .bootstrap-timepicker-widget.dropdown-menu+.form-control {
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px
+}
+.bootstrap-timepicker-widget table td input {
+    -webkit-border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+    border-radius: 1px !important
+}
+.bootstrap-timepicker-widget table td input.form-control {
+    display: table-cell;
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.bootstrap-timepicker-widget table td span {
+    font-size: 14px;
+    color: #555555;
+}
+.bootstrap-timepicker-widget.dropdown-menu {
+    max-width: 200px;
+}
+.bootstrap-timepicker-widget.dropdown-menu.open {
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.bootstrap-timepicker-widget table td a {
+    border-radius: 4px;
+}
+.bootstrap-timepicker-widget table td a:focus,.bootstrap-timepicker-widget table td a:hover
+    {
+    background: #348fe2 !important;
+    border: 1px transparent solid !important;
+    color: #fff
+}
+
+/** controller */
+.form-control[readonly] {
+    cursor: not-allowed;
+}
+.form-control[readonly]:focus,
+.form-control.readonly:focus {
+    border-color: #e5e6e7 !important;
+}
+
+table .progress {
+    border: 1px solid #dddddd;
+}
+
+/** padding & margin */
+.p-l-xxs {
+    padding-left: 5px;
+}
+.p-l-none {
+    padding-left: 0;
+}
+.p-r-xxs {
+    padding-right: 5px;
+}
+.p-r-none {
+    padding-right: 0;
+}
+
+/** jquery.validation */
+label.error {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+/** alert */
+.alert-warning {
+    color: #f8ac59;
+}
+/** =============================== 新增 =============================== */
+.number {
+    text-align: right;
+}
+
+.readonly {
+    background-color: #eee;
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.dropdownbutton .dropdown-menu>li>a {
+    padding: 4px 4px;
+    font-size: 14px;
+    width: 110px;
+    text-align: center;
+    background-color: #fff;
+    color: #fff !important;
+    border-top:0px;
+    border-radius:0px !important;
+}
+
+.dropdownbutton .dropdown-menu a:hover {
+    color: #fff;
+    background-color:#1c84c6;
+}
+
+.dropdownbutton .dropdown-menu {
+    top:33px;
+    min-width: 60px !important;
+    margin-top: 0px;
+    background-color: #1c84c6;
+    box-shadow:none;
+    border-radius:0px;
+    border-color:#1c84c6;
+}
+
+.dropdownbutton .dropdown-menu>li>a {
+    color: #fff;
+    background-color: #2E8BDB;
+    border-color:#2E8BDB;
+    margin:0px !important;
+}
+
+.dropdownbutton .dropdown-menu:before{
+}
+
+.addon-label {
+    position: absolute;
+    top: 10px;
+    right: -2px;
+}
+
+.infotips {
+    padding: 2px 6px;
+    color: #f8ac59;
+}
