@@ -23,9 +23,10 @@ public class RoleServiceTest {
 */
 	public static void main(String[] args) {
 		System.out.println("sd");
-		System.out.println("sd");
 		System.out.println("s2");
-		System.out.println("s3");
+		System.out.println("s2");
+		System.out.println("s2");
+		
 		System.out.println("123");
 /*	ApplicationContext ac=new ClassPathXmlApplicationContext("/config/spring.xml");
 		RoleService rc=(RoleService) ac.getBean(RoleService.class);
